@@ -1,41 +1,34 @@
-class cuadro {
-    constructor(x, y) {
+class Cuadro {
+    constructor(x, y,state) {
         this.x = x;
         this.y = y;
         this.clicked = false;
-        this.state = 0;
+        this.state = state;
     }
 
     draw() {
+
         rectMode(CENTER);
         fill(240);
-        rect(this.x, this.y, 50, 50);
+        rect(this.x, this.y, 100, 100);
+switch (this.state) {
+    case 1:
+        rectMode(CENTER);
+        fill(240,0,0);
+        rect(this.x, this.y, 40, 40);
+        break;
+        case 2:
+            fill(0,0,240);
+            ellipse(this.x, this.y, 40, 40);
+            break;
+
+    default:
+        break;
+}
+    
     }
 
-    click() {
-        if (this.clicked === false && dist(this.y, this.x, mouseY, mouseX) < 50 && mouseIsPressed && this.state === 0) {
-            this.state = round(random(1, 2));
-            this.clicked = true;
-
-            switch (state) {
-                case 1:
-                    rectMode(CENTER);
-                    fill(240, 0, 0);
-                    rect(this.x, this.y, 20, 20);
-                    break;
-
-                case 2:
-                    fill(0, 0, 240);
-                    ellipse(this.x, this.y, 20, 20);
-                    break;
-
-                default:
-                    break;
-            }
-            console.log(state);
-        }
-    }
-// basic interaction block
+// there was too much pressure on the class, and the mouseclick function is quite needed
 
 
 }
