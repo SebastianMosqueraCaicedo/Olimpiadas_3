@@ -1,4 +1,4 @@
-persona=new Persona(200,200,"amarilla",null,"enfadado","azules");
+persona=new Persona(200,200,"amarilla","marge","enfadado","azules");
 function setup() {
   createCanvas(400, 400);
 }

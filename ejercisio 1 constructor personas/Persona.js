@@ -7,11 +7,9 @@ class Persona {
         this.cabello = cabello;
         this.cara = cara;
         this.ojos = ojos;
-        this.pos = [];
-        this.cantidad = 0;
-        for (let j = 0; j < 3; j++) {
-            this.pos.push(new Array(3));
-        }
+        this.posx;
+        this.posy;
+
     }
 
     draw() {
@@ -85,18 +83,30 @@ class Persona {
                 break;
         }
         switch (this.cabello) {
-            case "afro":
+            case "marge":
 
-                break;
-            case "punk":
+                this.posx = new Array(5);
+                this.posy = new Array (9);
+                for (let j = -2; j < 3; j++) {
+                    for (let i = -4; i < 3; i++) {
 
-                break;
-            case "mal":
+                    this.posx[j]=this.x+(j*10);
+                    this.posy[i]=this.y-75+(i*15); 
 
-                break;
-
-            default:
-                break;
+                    fill(0,100,200);
+                    ellipse(this.posx[j],this.posy[i],20,20);
+                }
         }
+        break;
+        case "punk":
+
+        break;
+        case "mal":
+
+        break;
+
+        default:
+        break;
     }
+}
 }
