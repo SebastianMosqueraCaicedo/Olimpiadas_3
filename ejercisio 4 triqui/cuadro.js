@@ -27,6 +27,12 @@ switch (this.state) {
 }
     
     }
+    getx(){
+        return this.x;
+    }
+    gety(){
+        return this.y;
+    }
 
 // there was too much pressure on the class, and the mouseclick function is quite needed
 
