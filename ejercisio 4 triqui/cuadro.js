@@ -35,6 +35,7 @@ class cuadro {
             console.log(state);
         }
     }
+// basic interaction block
 
 
 }
