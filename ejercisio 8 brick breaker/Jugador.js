@@ -2,8 +2,8 @@ class Jugador extends Ent {
     constructor(x, y) {
         super(x, y);
         this.fila = 0;
-        this.r = 50 * this.fila;
-        this.g = 255 - (50 * this.fila);
+        this.r = 200;
+        this.g = 0;
         this.b = 200;
         this.w = 80;
         this.h = 10;
@@ -25,11 +25,11 @@ class Jugador extends Ent {
                 break;
         }
 
-        if ((this.x - (this.w / 2)) < 0) {
+        if (this.hitLe() < 0) {
             this.x += this.vel;
         }
-        if ((this.x + (this.w / 2)) > 400) {
-            this.x += this.vel;
+        if (this.hitRi() > 400) {
+            this.x -= this.vel;
         }
     }
 }
