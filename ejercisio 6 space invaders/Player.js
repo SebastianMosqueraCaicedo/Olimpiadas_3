@@ -7,11 +7,13 @@ class Player extends Ent {
         this.life = hp;
         this.shot = [];
         this.bullets = 0;
+        this.hit = false;
     }
     draw() {
         this.g = (255 / this.hp) * this.life;
         this.r = 255 - ((255 / this.hp) * this.life);
         super.params();
+
         if (this.life > 0) {
             fill(this.r, this.g, this.b);
             rect(this.x, this.y + 15, 5, 10);
@@ -44,6 +46,7 @@ class Player extends Ent {
                 this.shot[i].draw();
             }
         }
+
     }
 
     shoot() {
@@ -51,7 +54,7 @@ class Player extends Ent {
         for (let i = 0; i < this.bullets; i++) {
             if (this.bullets > this.shot.length) {
                 this.shot.push(new Shot(this.x, this.y - 20));
-                
+
                 if (this.shot[i].life === 0) {
                     this.bullets--;
                     this.shot[i] = this.shot.pop();
@@ -65,5 +68,29 @@ class Player extends Ent {
 
         }
 
+
+
+    }
+
+    verifyContact(obj) {
+        if ((obj.getx() > this.x - 6) && (obj.getx() < this.x + 6) && (obj.gety() > this.y - 13)
+        && (obj.gety() < this.y + 13)) {
+this.hit = true;
+        }
+        return this.hit;
+    }
+
+    getShot() {
+        for (let i = 0; i < this.bullets; i++) {
+        return this.shot[i];
+        }
+    }
+
+    getLife(){
+        return this.life;
+    }
+
+    getBullets(){
+        return this.bullets;
     }
 }

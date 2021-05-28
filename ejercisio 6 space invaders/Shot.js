@@ -22,7 +22,7 @@ class Shot extends Ent {
             this.life = 0;
         }
     }
-    type() {
-        return this.type;
+    getLife(){
+        return this.life;
     }
 }

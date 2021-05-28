@@ -17,4 +17,8 @@ class Shield extends Ent {
             this.x = -50;
         }
     }
+
+    getLife(){
+        return this.life;
+    }
 }

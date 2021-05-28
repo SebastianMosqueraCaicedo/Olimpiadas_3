@@ -7,6 +7,7 @@ class Alien extends Ent {
         this.seed = Math.random();
         this.shot = [];
         this.bullets = 0;
+        this.hit = false;
     }
     draw() {
         this.g = (255 / this.hp) * this.life;
@@ -72,7 +73,23 @@ class Alien extends Ent {
 
     getShot() {
         for (let i = 0; i < this.bullets; i++) {
-            return this.shot[i];
+        return this.shot[i];
         }
+    }
+
+    verifyContact(obj) {
+        if ((obj.getx() > this.x - 12) && (obj.getx() < this.x + 12) && (obj.gety() < this.y + 20)
+        && (obj.gety() < this.y + 30)) {
+this.hit = true;
+        }
+        return this.hit;
+    }
+
+    getBullets(){
+        return this.bullets;
+    }
+
+    getLife(){
+        return this.life;
     }
 }
