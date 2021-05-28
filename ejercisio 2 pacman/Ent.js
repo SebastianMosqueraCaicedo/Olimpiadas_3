@@ -7,6 +7,7 @@ class Ent {
         this.b = 255;
         this.vel = 0;
         this.dir = 0;
+        this.is=true;
     }
     draw() {
 
@@ -16,5 +17,8 @@ class Ent {
     }
     gety() {
         return this.y;
+    }
+    getdir() {
+        return this.dir;
     }
 }
