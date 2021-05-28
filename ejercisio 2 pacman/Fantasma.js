@@ -4,8 +4,8 @@ class Fantasma extends Ent {
         this.vel = 3;
         this.dir = round(random(0, 3));
         this.r = random(0, 200);
-        this.g = random(20, 150);
-        this.b = random(50, 200);
+        this.g = random(100, 150);
+        this.b = random(100, 200);
 
     }
     draw() {
