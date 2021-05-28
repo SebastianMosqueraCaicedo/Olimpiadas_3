@@ -7,6 +7,7 @@ class Ent {
         this.b = 0;
         this.vel = 2;
         this.life = 1;
+        this.dir = 0;
     }
     draw() {
         text("not found", this.x, this.y);
