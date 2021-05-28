@@ -1,7 +1,12 @@
+bola = new Bola(50,50);
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
+  fantasma = new Fantasma (random(100,500),random(100,500)); 
 }
 
 function draw() {
-  background(220);
+  background(20);
+  bola.draw();
+  fantasma.draw();
 }
