@@ -18,7 +18,7 @@ class Carro extends Ent {
 
         }
         super.params();
-        fill(0,100,200);
+        fill(0, 100, 200);
         rect(this.x, this.y + 10, 30, 20);
     }
 }
