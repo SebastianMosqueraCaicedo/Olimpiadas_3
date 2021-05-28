@@ -15,7 +15,13 @@ if(this.turn===0){
     this.x+=this.vel;
 }
 this.y= (this.y+this.dir);
-console.log(this.turn);
+
+if(this.y>485){
+    this.dir= -this.dir;
+  }
+  if(this.y<15){
+    this.dir= -this.dir;
+  }
 
     }
     getx() {
