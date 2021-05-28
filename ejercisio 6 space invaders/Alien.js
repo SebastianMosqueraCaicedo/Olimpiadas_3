@@ -26,7 +26,7 @@ class Alien extends Ent {
 
             if (this.x - 20 < 0) {
                 this.x += 20;
-                this.y += 15;
+                this.y += 30;
                 this.dir = 1;
                 this.vel *= 1.2;
             }
@@ -34,7 +34,7 @@ class Alien extends Ent {
 
             if (this.x + 20 > 600) {
                 this.x -= 20;
-                this.y += 15;
+                this.y += 30;
                 this.dir = 2;
                 this.vel *= 1.2;
             }
@@ -47,7 +47,6 @@ class Alien extends Ent {
 
 
             for (let i = 0; i < this.bullets; i++) {
-                console.log(this.shot.length);
                 if (this.bullets > this.shot.length) {
                     this.shot.push(new Shot(this.x, this.y + 20));
 
