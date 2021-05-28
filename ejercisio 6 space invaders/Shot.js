@@ -18,5 +18,11 @@ class Shot extends Ent {
         if (this.y > 630) {
             this.life = 0;
         }
+        if (this.y < -30) {
+            this.life = 0;
+        }
+    }
+    type() {
+        return this.type;
     }
 }

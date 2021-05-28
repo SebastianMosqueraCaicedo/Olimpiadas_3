@@ -2,7 +2,7 @@ class Shield extends Ent {
     constructor(x, y) {
         super(x, y);
         this.b = 100;
-        this.life = 5;
+        this.life = 15;
     }
     draw() {
         super.params();
