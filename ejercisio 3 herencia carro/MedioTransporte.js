@@ -1,8 +1,7 @@
 class MedioTransporte {
-    constructor(x, y, type) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.type = type;
         this.r = 0;
         this.g = 0;
         this.b = 0;
