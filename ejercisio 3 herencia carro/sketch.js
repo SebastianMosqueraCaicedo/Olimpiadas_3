@@ -1,4 +1,4 @@
-ejemplo = new Carro(200, 200);
+ejemplo = new CarroTaxi(200, 200);
 
 function setup() {
   createCanvas(400, 400);
