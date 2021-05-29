@@ -4,7 +4,7 @@ class Player extends Ent {
         this.dir = 0;
         this.w = 60;
         this.h = 40;
-        this.r = 200;
+        this.r = 230;
         this.g = 50;
     }
     draw() {

@@ -3,26 +3,26 @@ class Carro extends Ent {
         super(x, y);
         this.vel = 3;
         this.dir = 4;
-        this.w = 40;
-        this.h = 60;
+        this.w = 60;
+        this.h = 40;
         this.r = 100;
-        this.g = (this.x / 255) * 100;
-        this.b = 255 - ((this.x / 255) * 100);
+        this.g = (this.y / 255) * 100;
+        this.b = 255 - ((this.y / 255) * 100);
     }
     draw() {
 console.log(this);
         for (let i = -1; i < 2; i++) {
             for (let j = -1; j < 2; j++) {
-                if (j != 0) {
+                if (i != 0) {
                     fill(0);
-                    rect(this.x + (20 * i), this.y + (15 * j), 5, 10);
+                    rect(this.x + (15 * i), this.y + (20 * j), 10, 5);
                 }
             }
 
         }
         super.params();
         fill(0, 100, 200);
-        rect(this.x, this.y + 10, 30, 20);
+        rect(this.x+ 10, this.y , 20, 30);
 
         if (this.hitLe() > 800) {
             this.x = 0 - (100 + (random(200, 0)));
