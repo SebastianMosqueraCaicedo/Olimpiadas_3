@@ -1,103 +1,66 @@
-bloque = [];
-for (let i = 0; i < 5; i++) {
-  bloque.push(new Array(4));
-}
-jugador = new Jugador(200, 350);
-bola = new Bola(200, 200);
+carro = [];
+linea = [];
+player = new Player(40, 300);
+let oveja = 8;
 
 function setup() {
-  createCanvas(400, 400);
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 4; j++) {
-      bloque[i][j] = new Bloque(70 + (60 * i), 20 + (25 * j), j);
+  createCanvas(800, 600);
+  for (let i = 0; i < 2; i++) {
+    linea.push(new Array(8));
+    for (let j = 0; j < 8; j++) {
+      linea[i][j] = new Linea(200 + (400 * i), 40 + (75 * j));
+
+    }
+  }
+
+  for (let i = 0; i < 7; i++) {
+    if (i != 3) {
+      carro[i] = new Carro(100 + (100 * i), -100 + (random(-800, 0)));
     }
   }
 }
 
 function draw() {
   background(220);
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 4; j++) {
-      bloque[i][j].draw();
-      if (bola.hitUp() > bloque[i][j].hitUp() &&
-        bola.hitUp() < bloque[i][j].hitDo() &&
-        bola.getX() > bloque[i][j].hitLe() &&
-        bola.getX() < bloque[i][j].hitRi()) {
-        bola.vel = -bola.vel;
-        bola.dir = Math.random() * (5) - 2.5;
-        bloque[i][j].vivo = false;
-        console.log(" 4364");
-      }
+  fill(150);
+  rect(width / 2, height / 2, 50, 600);
 
-      if (bola.hitDo() > bloque[i][j].hitUp() &&
-        bola.hitDo() < bloque[i][j].hitDo() &&
-        bola.getX() > bloque[i][j].hitLe() &&
-        bola.getX() < bloque[i][j].hitRi()) {
-        bola.vel = -bola.vel;
-        bola.dir = Math.random() * (5) - 2.5;
-        bloque[i][j].vivo = false;
-        console.log(" 4364");
-      }
 
-      if (bola.hitRi() > bloque[i][j].hitLe() &&
-        bola.hitRi() < bloque[i][j].hitRi() &&
-        bola.getY() > bloque[i][j].hitUp() &&
-        bola.getY() < bloque[i][j].hitDo()) {
-        bola.dir = -bola.dir;
-        bloque[i][j].vivo = false;
-        console.log(" 4364");
-      }
 
-      if (bola.hitLe() > bloque[i][j].hitLe() &&
-        bola.hitLe() < bloque[i][j].hitRi() &&
-        bola.getY() > bloque[i][j].hitUp() &&
-        bola.getY() < bloque[i][j].hitDo()) {
-        bola.dir = -bola.dir;
-        bloque[i][j].vivo = false;
-        console.log(" 4364");
-      }
 
+  for (let i = 0; i < 2; i++) {
+    for (let j = 0; j < 8; j++) {
+      linea[i][j].draw();
     }
   }
 
-  jugador.draw();
-  bola.draw();
+  player.draw();
 
-  if (bola.hitUp() > jugador.hitUp() &&
-    bola.hitUp() < jugador.hitDo() &&
-    bola.getX() > jugador.hitLe() &&
-    bola.getX() < jugador.hitRi()) {
-    bola.vel = -bola.vel;
-    bola.dir = Math.random() * (5) - 2.5;
-    console.log(" 4364");
+  for (let i = 0; i < 7; i++) {
+    if (i != 3) {
+      carro[i].draw();
+      if (oveja === 8 || oveja === i) {
+        if (player.hitReg(carro[i])) {
+          player.hit = true;
+          carro[i].hit = true;
+          oveja = i;
+        }
+      }
+    }
   }
 
-  if (bola.hitDo() > jugador.hitUp() &&
-    bola.hitDo() < jugador.hitDo() &&
-    bola.getX() > jugador.hitLe() &&
-    bola.getX() < jugador.hitRi()) {
-    bola.vel = -bola.vel;
-    bola.dir = Math.random() * (5) - 2.5;
-    console.log(" 4364");
-  }
 
-  if (bola.hitRi() > jugador.hitLe() &&
-    bola.hitRi() < jugador.hitRi() &&
-    bola.getY() > jugador.hitUp() &&
-    bola.getY() < jugador.hitDo()) {
-    bola.dir = -bola.dir;
-    console.log(" 4364");
-  }
 }
 
 function keyPressed() {
+
   switch (key) {
     case 'a':
-      jugador.dir = 1;
-      break;
+      player.dir = 3;
 
+      break;
     case 'd':
-      jugador.dir = 2;
+      player.dir = 4;
       break;
 
     default:
@@ -106,5 +69,5 @@ function keyPressed() {
 }
 
 function keyReleased() {
-  jugador.dir = 0;
+  player.dir = 0;
 }

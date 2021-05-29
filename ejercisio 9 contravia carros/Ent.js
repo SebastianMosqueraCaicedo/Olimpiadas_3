@@ -2,22 +2,65 @@ class Ent {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.vel = 3;
+        this.vel = 4;
         this.dir = 0;
         this.w = 0;
         this.h = 0;
         this.r = 0;
         this.g = 0;
         this.b = 0;
+        this.hit = false;
     }
     draw() {
 
     }
     params() {
         rectMode(CENTER);
-        strokeWeight(3);
-        stroke(this.r - 100, this.g - 100, this.b - 100);
+        noStroke();
         fill(this.r, this.g, this.b);
+        rect(this.x, this.y, this.w, this.h);
+    }
+    move() {
+        switch (this.dir) {
+            case 1:
+                this.y -= this.vel;
+                break;
+            case 2:
+                this.y += this.vel;
+                break;
+            case 3:
+                this.x -= this.vel;
+                break;
+            case 4:
+                this.x += this.vel;
+                break;
+
+            default:
+                break;
+        }
+        if (this.hit === true) {
+            this.dir = 0;
+        }
+    }
+
+    hitReg(obj) {
+
+        if (this.hitUp() > obj.hitUp() &&
+            this.hitUp() < obj.hitDo() &&
+            this.getX() > obj.hitLe() &&
+            this.getX() < obj.hitRi() || this.hitDo() > obj.hitUp() &&
+            this.hitDo() < obj.hitDo() &&
+            this.getX() > obj.hitLe() &&
+            this.getX() < obj.hitRi() || this.hitRi() > obj.hitLe() &&
+            this.hitRi() < obj.hitRi() &&
+            this.getY() > obj.hitUp() &&
+            this.getY() < obj.hitDo() || this.hitLe() > obj.hitLe() &&
+            this.hitLe() < obj.hitRi() &&
+            this.getY() > obj.hitUp() &&
+            this.getY() < obj.hitDo()) {
+            this.hit = true;
+        }
+        return this.hit;
     }
 
     hitUp() {
