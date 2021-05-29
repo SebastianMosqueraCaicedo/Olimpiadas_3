@@ -11,8 +11,10 @@ Ejercisio 4: https://sebastianmosqueracaicedo.github.io/Olimpiadas_3/ejercisio%2
 
 Ejercisio 5: https://sebastianmosqueracaicedo.github.io/Olimpiadas_3/ejercisio%205%20pong/
 
+<h1> I havent been able to properly do #6, perhaps i was too ambitious</h1>
+
 Ejercisio 6: https://sebastianmosqueracaicedo.github.io/Olimpiadas_3/ejercisio%206%20space%20invaders/
-<h2> I havent been able to properly do this one, perhaps i was too ambitious</h2>
+
 
 Ejercisio 7: https://sebastianmosqueracaicedo.github.io/Olimpiadas_3/ejercisio%207%20car%20frogger/
 
