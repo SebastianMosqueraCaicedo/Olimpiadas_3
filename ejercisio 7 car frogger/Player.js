@@ -22,6 +22,19 @@ class Player extends Ent {
         fill(0, 100, 200);
         rect(this.x + 10, this.y, 20, 30);
 
+        if (this.hitLe() < 0) {
+            this.x += this.vel;
+        }
+
+        if (this.hitRi() > 800) {
+            this.x += this.vel;
+            textAlign(CENTER);
+            fill(255,0,0);
+            textSize(22);
+            text("Win", 400, 300);
+
+        }
+
         if (this.hit === true) {
             for (let i = -1; i < 2; i++) {
                 for (let j = -1; j < 2; j++) {
@@ -33,6 +46,11 @@ class Player extends Ent {
                     }
                 }
             }
+            textAlign(CENTER);
+            fill(255,0,0);
+            textSize(22);
+            text("Lose", 400, 300);
+
         } else {
             super.move();
         }

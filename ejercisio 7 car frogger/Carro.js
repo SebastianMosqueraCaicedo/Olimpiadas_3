@@ -1,6 +1,7 @@
 class Carro extends Ent {
     constructor(x, y) {
         super(x, y);
+        this.vel = 5;
         this.dir = 2;
         this.w = 40;
         this.h = 60;
@@ -22,6 +23,10 @@ class Carro extends Ent {
         super.params();
         fill(0, 100, 200);
         rect(this.x, this.y + 10, 30, 20);
+
+        if (this.y > 700) {
+            this.y = -100 + (random(-800, 0));
+        }
 
         if (this.hit === true) {
             for (let i = -1; i < 2; i++) {

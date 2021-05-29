@@ -54,6 +54,9 @@ class Ent {
             this.getX() < obj.hitRi() || this.hitRi() > obj.hitLe() &&
             this.hitRi() < obj.hitRi() &&
             this.getY() > obj.hitUp() &&
+            this.getY() < obj.hitDo() || this.hitLe() > obj.hitLe() &&
+            this.hitLe() < obj.hitRi() &&
+            this.getY() > obj.hitUp() &&
             this.getY() < obj.hitDo()) {
             this.hit = true;
         }
