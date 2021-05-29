@@ -9,6 +9,7 @@ class Ent {
         this.r = 0;
         this.g = 0;
         this.b = 0;
+        this.hit = false;
     }
     draw() {
 
@@ -37,6 +38,26 @@ class Ent {
             default:
                 break;
         }
+        if (this.hit === true) {
+            this.dir = 0;
+        }
+    }
+
+    hitReg(obj) {
+
+        if (this.hitUp() > obj.hitUp() &&
+            this.hitUp() < obj.hitDo() &&
+            this.getX() > obj.hitLe() &&
+            this.getX() < obj.hitRi() || this.hitDo() > obj.hitUp() &&
+            this.hitDo() < obj.hitDo() &&
+            this.getX() > obj.hitLe() &&
+            this.getX() < obj.hitRi() || this.hitRi() > obj.hitLe() &&
+            this.hitRi() < obj.hitRi() &&
+            this.getY() > obj.hitUp() &&
+            this.getY() < obj.hitDo()) {
+            this.hit = true;
+        }
+        return this.hit;
     }
 
     hitUp() {
