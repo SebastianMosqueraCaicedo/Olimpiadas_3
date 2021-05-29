@@ -39,7 +39,8 @@ class Ent {
                 break;
         }
         if (this.hit === true) {
-            this.dir = 0;
+            this.dir = 3;
+            this.vel = 9;
         }
     }
 

@@ -39,9 +39,9 @@ console.log(this);
                     }
                 }
             }
-        } else {
+        } 
             super.move();
-        }
+        
 
     }
 }

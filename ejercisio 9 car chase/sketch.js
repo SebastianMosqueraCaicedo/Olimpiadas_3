@@ -1,6 +1,6 @@
 carro = [];
 linea = [];
-player = new Player(200, 300);
+player = new Player(300, 300);
 let oveja = 8;
 
 function setup() {
@@ -13,10 +13,10 @@ function setup() {
     }
   }
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
 
-    carro[i] = new Carro(-100 + (random(-800, 0)), 100 + (100 * i));
-    carro[i].vel = random(2, 4);
+    carro[i] = new Carro(-100 + (random(-800, 0)), 40 + (100 * i));
+    carro[i].vel = random(3, 6);
   }
 }
 
@@ -31,7 +31,7 @@ function draw() {
 
   player.draw();
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
 
     carro[i].draw();
     if (oveja === 8 || oveja === i) {

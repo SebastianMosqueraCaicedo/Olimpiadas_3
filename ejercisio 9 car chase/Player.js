@@ -57,9 +57,9 @@ class Player extends Ent {
 
         } else {
             this.x += 1;
-            super.move();
+
         }
 
-
+        super.move();
     }
 }
