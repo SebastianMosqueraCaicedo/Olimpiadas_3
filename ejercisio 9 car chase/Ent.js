@@ -48,7 +48,7 @@ class Ent {
 
         if (this.hitUp() > obj.hitUp() &&
             this.hitUp() < obj.hitDo() &&
-            dist(this.getLe(), this.getUp(),obj.getLe(),obj.getDo()) < 40 &&
+            dist(this.hitLe(), this.hitUp(),obj.hitLe(),obj.hitDo()) < 40 &&
             this.getX() < obj.hitRi() || this.hitDo() > obj.hitUp() &&
             this.hitDo() < obj.hitDo() &&
             this.getX() > obj.hitLe() &&
